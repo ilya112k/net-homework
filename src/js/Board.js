@@ -1,5 +1,3 @@
-import Goblin from "./Goblin";
-
 export default class Board {
   constructor(size = 4) {
     this.size = size;
@@ -12,9 +10,7 @@ export default class Board {
   createBoard() {
     for (let i = 0; i < this.size * this.size; i++) {
       const cell = document.createElement('div');
-      const goblin = new Goblin();
       cell.classList.add('cell');
-     // cell.appendChild(goblin.getElement())
       this.boardEl.appendChild(cell);
       this.cells.push(cell);
     }
