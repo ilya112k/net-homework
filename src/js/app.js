@@ -1,6 +1,3 @@
-const board = document.getElementById('game-board');
-const cells = [];
-
 import Game from './Game';
 
 document.addEventListener('DOMContentLoaded', () => {
