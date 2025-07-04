@@ -3,7 +3,6 @@ export default class Score {
     this.hit = 0;
     this.miss = 0;
     this.scoreEl = document.createElement("div");
-    this.updateView();
   }
 
   incrementHit() {

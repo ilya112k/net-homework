@@ -12,7 +12,7 @@ export default class Goblin {
 
   remove() {
     if (this.img.parentElement) {
-      this.img.parentElement.removeChild(this.img);
+      this.img.parentElement.innerHTML = "";
     }
   }
 

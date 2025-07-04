@@ -15,10 +15,11 @@ export default class Game {
     this.container.appendChild(this.board.getElement());
 
     this.handleClick = this.handleClick.bind(this);
-    this.start();
   }
 
   start() {
+    this.board.createBoard();
+    this.score.updateView();
     this.board.getElement().addEventListener("click", this.handleClick);
     this.nextMove();
   }

@@ -4,7 +4,6 @@ export default class Board {
     this.cells = [];
     this.boardEl = document.createElement("div");
     this.boardEl.classList.add("board");
-    this.createBoard();
   }
 
   createBoard() {
