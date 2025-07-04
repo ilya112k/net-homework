@@ -1,45 +1,45 @@
 /**
  * @jest-environment jsdom
  */
+/* eslint-env jest */
 import Score from "./Score";
 
-describe("Score Tests", function() {
+describe("Score Tests", function () {
   let score;
-  beforeEach(function() {
+  beforeEach(function () {
     // act
     score = new Score();
-  })
+  });
 
-  afterEach(function() {
+  afterEach(function () {
     score = null;
-  })
+  });
 
-  test('init score', () => {
+  test("init score", () => {
     // assert
     expect(score.hit).toBe(0);
     expect(score.miss).toBe(0);
-  })
+  });
 
-  test('increment hit', () => {
+  test("increment hit", () => {
     // arrage
     const hitResult = 1;
     // act
     score.incrementHit();
     // assert
     expect(score.hit).toBe(hitResult);
-  })
+  });
 
-  test('increment miss', () => {
+  test("increment miss", () => {
     // arrage
     const misResult = 1;
     // act
     score.incrementMiss();
     // assert
     expect(score.miss).toBe(misResult);
+  });
 
-  })
-
-  test('update view', () => {
+  test("update view", () => {
     // arrage
     const viewText = `Hit: 1 | Missed: 1`;
     // act
@@ -47,15 +47,15 @@ describe("Score Tests", function() {
     // assert
     score.incrementHit();
     score.incrementMiss();
-    expect(score.getElement().innerHTML).toBe( viewText);
-  })
+    expect(score.getElement().innerHTML).toBe(viewText);
+  });
 
-  test('get element', () => {
+  test("get element", () => {
     // assert
     expect(score.getElement()).toBe(score.scoreEl);
-  })
+  });
 
-  test('game over', () => {
+  test("game over", () => {
     const maxMissCount = 5;
     // act-
     for (let i = 0; i < maxMissCount; i++) {
@@ -64,5 +64,5 @@ describe("Score Tests", function() {
 
     // assert
     expect(score.isGameOver()).toBe(true);
-  })
-})
+  });
+});
