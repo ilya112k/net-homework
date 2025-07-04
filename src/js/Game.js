@@ -1,6 +1,6 @@
-import Board from './Board';
-import Goblin from './Goblin';
-import Score from './Score';
+import Board from "./Board";
+import Goblin from "./Goblin";
+import Score from "./Score";
 
 export default class Game {
   constructor(container) {
@@ -19,13 +19,13 @@ export default class Game {
   }
 
   start() {
-    this.board.getElement().addEventListener('click', this.handleClick);
+    this.board.getElement().addEventListener("click", this.handleClick);
     this.nextMove();
   }
 
   nextMove() {
     if (this.score.isGameOver()) {
-      alert('Игра окончена!');
+      alert("Игра окончена!");
       clearTimeout(this.timer);
       return;
     }

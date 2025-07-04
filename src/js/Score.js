@@ -2,7 +2,7 @@ export default class Score {
   constructor() {
     this.hit = 0;
     this.miss = 0;
-    this.scoreEl = document.createElement('div');
+    this.scoreEl = document.createElement("div");
     this.updateView();
   }
 
