@@ -1,4 +1,4 @@
-import CardValidator from "./cardValidator";
+import CardValidator from "./CardValidator";
 
 describe("CardValidator", () => {
   test("invalid number fails Luhn", () => {
