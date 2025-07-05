@@ -41,7 +41,7 @@ describe("Score Tests", function () {
 
   test("update view", () => {
     // arrage
-    const viewText = `Hit: 1 | Missed: 1`;
+    const viewText = `Попаданий: 1 | Промахов: 1`;
     // act
     score.updateView();
     // assert

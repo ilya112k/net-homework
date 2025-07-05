@@ -1,0 +1,33 @@
+Card Validator Widget – License Attribution File
+-----------------------------------------------
+
+This file contains license information for third-party assets used in this project.
+
+1. Card Network Icons (Visa, MasterCard, American Express, Discover, JCB, Diners Club, Mir)
+
+   Source: https://findicons.com (or another icon source such as https://iconarchive.com or https://flaticon.com)
+
+   Author: [Specify the author or icon pack name, e.g. "IconShock", "Freepik", or "CustomPack by User123"]
+
+   License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+   License URL: https://creativecommons.org/licenses/by/3.0/
+
+   Notes:
+   - These icons are used solely for educational, demonstration, or testing purposes.
+   - They are not redistributed or resold.
+   - All trademarks and logos belong to their respective owners.
+
+2. Source Code
+
+   Author: ilya112k
+
+   License: MIT License
+   License URL: https://opensource.org/licenses/MIT
+
+   Notes:
+   - You are free to use, modify, and distribute the code with attribution.
+   - This license applies to the original JavaScript source code (cardValidator.js, cardType.js, CardWidget.js).
+
+---
+
+If you use a different set of icons or additional libraries, please update this file accordingly.

@@ -16,7 +16,7 @@ export default class Score {
   }
 
   updateView() {
-    this.scoreEl.textContent = `Hit: ${this.hit} | Missed: ${this.miss}`;
+    this.scoreEl.textContent = `Попаданий: ${this.hit} | Промахов: ${this.miss}`;
   }
 
   getElement() {

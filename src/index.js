@@ -1,4 +1,6 @@
 import "./css/style.css";
+import "./css/game.css";
+import "./css/card-validator.css";
 
 import "./js/app";
 

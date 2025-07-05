@@ -1,11 +1,21 @@
-import Game from "./Game";
+import Game from "./game/Game";
+import CardWidget from "./card-checker/CardWidget";
 
-document.addEventListener("DOMContentLoaded", () => {
+function initGame() {
+  const gameContainer = document.querySelector(".widget-game");
   const container = document.createElement("div");
   container.classList.add("game-container");
-  document.body.appendChild(container);
+  gameContainer.appendChild(container);
   const game = new Game(container);
   game.start();
-});
+}
 
-console.log("app.js included");
+function initCardWidget() {
+  const cardWidget = new CardWidget(".card-form");
+  cardWidget.start();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initGame();
+  initCardWidget();
+});
