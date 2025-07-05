@@ -1,5 +1,5 @@
-import CardValidator from "./cardValidator.js";
-import CardType from "./cardType.js";
+import CardValidator from "./CardValidator";
+import CardType from "./CardType";
 
 export default class CardWidget {
   constructor(formSelector) {
