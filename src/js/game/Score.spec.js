@@ -55,7 +55,7 @@ describe("Score Tests", function () {
     expect(score.getElement()).toBe(score.scoreEl);
   });
 
-  test("game over", () => {
+  test("your lose", () => {
     const maxMissCount = 5;
     // act-
     for (let i = 0; i < maxMissCount; i++) {
@@ -63,6 +63,17 @@ describe("Score Tests", function () {
     }
 
     // assert
-    expect(score.isGameOver()).toBe(true);
+    expect(score.isYourLose()).toBe(true);
+  });
+
+  test("your win", () => {
+    const maxHintCount = 5;
+    // act-
+    for (let i = 0; i < maxHintCount; i++) {
+      score.incrementHit();
+    }
+
+    // assert
+    expect(score.isYourWin()).toBe(true);
   });
 });

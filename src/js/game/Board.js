@@ -4,18 +4,6 @@ export default class Board {
     this.cells = [];
     this.boardEl = document.createElement("div");
     this.boardEl.classList.add("board");
-    this.modalEl = document.querySelector(".modal");
-    this.modalResultEl = this.modalEl.querySelector('.modal-content_text');
-  }
-
-  printWin() {
-    this.modalEl.classList.add('active');
-    this.modalResultEl.textContent = `Игра окончена! Вы выиграли!`;
-  }
-
-  printLose() {
-    this.modalEl.classList.add('active');
-    this.modalResultEl.textContent = `Игра окончена! Вы проиграли!`;
   }
 
   createBoard() {
@@ -33,10 +21,6 @@ export default class Board {
       index = Math.floor(Math.random() * this.cells.length);
     } while (index === excludeIndex);
     return { element: this.cells[index], index };
-  }
-
-  getModal() {
-    return this.modalEl;
   }
 
   getElement() {

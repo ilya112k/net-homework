@@ -3,7 +3,7 @@
  */
 /* eslint-env jest */
 import Game from "./Game";
-import { faker } from "@faker-js/faker";
+import {fa, faker} from "@faker-js/faker";
 
 describe("Game Tests", () => {
   let game;
@@ -30,11 +30,10 @@ describe("Game Tests", () => {
 
   test("Next move and game is over", () => {
     game.score = {
-      isGameOver() {
+      isYourLose() {
         return true;
       },
     };
-    window.alert = jest.fn();
 
     game.nextMove();
 
@@ -46,9 +45,12 @@ describe("Game Tests", () => {
     const randomIndex = faker.number.int({ min: 0, max: 100 });
 
     game.score = {
-      isGameOver() {
+      isYourLose: () =>{
         return false;
       },
+      isYourWin: () => {
+        return false;
+      }
     };
 
     game.board = {

@@ -1,6 +1,7 @@
 import Board from "./Board";
 import Goblin from "./Goblin";
 import Score from "./Score";
+import Modal from "./Modal";
 
 export default class Game {
   constructor(container) {
@@ -8,11 +9,13 @@ export default class Game {
     this.board = new Board();
     this.goblin = new Goblin();
     this.score = new Score();
+    this.modal = new Modal();
     this.currentIndex = -1;
     this.timer = null;
 
     this.container.append(this.score.getElement());
     this.container.append(this.board.getElement());
+    this.container.append(this.modal.getModal());
 
     this.handleClick = this.handleClick.bind(this);
   }
@@ -21,19 +24,19 @@ export default class Game {
     this.board.createBoard();
     this.score.updateView();
     this.board.getElement().addEventListener("click", this.handleClick);
-    this.board.getModal().addEventListener("click", () => this.board.modalEl.classList.remove('active'));
+    this.modal.start();
     this.nextMove();
   }
 
   nextMove() {
     if (this.score.isYourLose()) {
-      this.board.printLose();
+      this.modal.printLose();
       clearTimeout(this.timer);
       return;
     }
 
     if (this.score.isYourWin()) {
-      this.board.printWin();
+      this.modal.printWin();
       clearTimeout(this.timer);
       return;
     }
