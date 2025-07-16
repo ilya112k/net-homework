@@ -23,7 +23,12 @@ export default class Score {
     return this.scoreEl;
   }
 
-  isGameOver() {
+  isYourLose() {
     return this.miss >= 5;
   }
+
+  isYourWin() {
+    return this.hit >= 5;
+  }
+
 }

@@ -1,5 +1,4 @@
 import Game from "./game/Game";
-import CardWidget from "./card-checker/CardWidget";
 
 function initGame() {
   const gameContainer = document.querySelector(".widget-game");
@@ -10,12 +9,7 @@ function initGame() {
   game.start();
 }
 
-function initCardWidget() {
-  const cardWidget = new CardWidget(".card-form");
-  cardWidget.start();
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   initGame();
-  initCardWidget();
 });

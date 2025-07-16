@@ -11,8 +11,8 @@ export default class Game {
     this.currentIndex = -1;
     this.timer = null;
 
-    this.container.appendChild(this.score.getElement());
-    this.container.appendChild(this.board.getElement());
+    this.container.append(this.score.getElement());
+    this.container.append(this.board.getElement());
 
     this.handleClick = this.handleClick.bind(this);
   }
@@ -21,12 +21,19 @@ export default class Game {
     this.board.createBoard();
     this.score.updateView();
     this.board.getElement().addEventListener("click", this.handleClick);
+    this.board.getModal().addEventListener("click", () => this.board.modalEl.classList.remove('active'));
     this.nextMove();
   }
 
   nextMove() {
-    if (this.score.isGameOver()) {
-      alert("Игра окончена!");
+    if (this.score.isYourLose()) {
+      this.board.printLose();
+      clearTimeout(this.timer);
+      return;
+    }
+
+    if (this.score.isYourWin()) {
+      this.board.printWin();
       clearTimeout(this.timer);
       return;
     }
@@ -36,9 +43,6 @@ export default class Game {
     this.goblin.showIn(element);
 
     this.timer = setTimeout(() => {
-      if (this.goblin.getElement().parentElement) {
-        this.score.incrementMiss();
-      }
       this.nextMove();
     }, 1000);
   }
@@ -46,6 +50,9 @@ export default class Game {
   handleClick(event) {
     if (event.target === this.goblin.getElement()) {
       this.score.incrementHit();
+      this.goblin.remove();
+    } else  {
+      this.score.incrementMiss();
       this.goblin.remove();
     }
   }

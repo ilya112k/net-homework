@@ -3,11 +3,12 @@ export default class Goblin {
     this.img = document.createElement("img");
     this.img.src = "./img/goblin.png";
     this.img.classList.add("goblin");
+    this.img.alt = "Goblin"
   }
 
   showIn(cell) {
     this.remove();
-    cell.appendChild(this.img);
+    cell.append(this.img);
   }
 
   remove() {
