@@ -46,6 +46,9 @@ export default class Game {
     this.goblin.showIn(element);
 
     this.timer = setTimeout(() => {
+      if (this.goblin.getElement().parentElement) {
+        this.score.incrementMiss();
+      }
       this.nextMove();
     }, 1000);
   }
